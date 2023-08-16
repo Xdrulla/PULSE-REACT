@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MainLayout from './componentes/MainLayouts';
-import './styles/styles.css';
+import './styles/styles.scss';
 import 'materialize-css/dist/css/materialize.min.css';
 
 ReactDOM.render(
