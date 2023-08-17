@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/PULSE-REACT/static/css/main.df12dcf6.css",
+    "main.js": "/PULSE-REACT/static/js/main.c1e17621.js",
+    "static/media/foto.webp": "/PULSE-REACT/static/media/foto.c5aa8ee5f4f220aa26a9.webp",
+    "static/media/estoque.jpg": "/PULSE-REACT/static/media/estoque.66f39382fab749181f56.jpg",
+    "static/media/vendas.png": "/PULSE-REACT/static/media/vendas.6db546d3c02dc78efaa3.png",
+    "index.html": "/PULSE-REACT/index.html",
+    "main.df12dcf6.css.map": "/PULSE-REACT/static/css/main.df12dcf6.css.map",
+    "main.c1e17621.js.map": "/PULSE-REACT/static/js/main.c1e17621.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df12dcf6.css",
+    "static/js/main.c1e17621.js"
+  ]
+}
