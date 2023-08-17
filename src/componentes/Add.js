@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+// import BarcodeScanner from '../componentes/scannerBar';
 import api from '../api/api';
 
-const Add = () => {
+const Add = ({ onAdd }) => {
   const [formData, setFormData] = useState({
     nome_produto: '',
     codigo_barras: '',
@@ -12,19 +13,29 @@ const Add = () => {
     valor_atacado: ''
   });
 
-  const gerarCodigoBarras = () => {
-    // Implementar a lógica para gerar o código de barras
-  };
+  // const handleBarcodeDetected = (barcode) => {
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     codigo_barras: barcode,
+  //   }));
+  // };
+
+  function gerarCodigoBarras() {
+    const codigoAleatorio = Math.floor(Math.random() * 1000000000000).toString();
+    setFormData(prevData => ({
+      ...prevData,
+      codigo_barras: codigoAleatorio
+    }));
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await api.post('/products', formData);
       console.log('Product created:', response.data);
-      // Adicionar a lógica para exibir mensagem de sucesso para o usuário
+      onAdd(response.data);
     } catch (error) {
       console.error('Error creating product:', error);
-      // Adicionar a lógica para exibir mensagem de erro para o usuário
     }
   };
 
@@ -60,6 +71,7 @@ const Add = () => {
               <div className='row'>
                 <div className='input-field col s12'>
                   <label htmlFor='codigo_barras'>Código de Barras</label>
+                  {/* <BarcodeScanner onBarcodeDetected={handleBarcodeDetected} /> */}
                   <input
                     id='codigo_barras'
                     type='text'
@@ -70,7 +82,7 @@ const Add = () => {
                     onChange={handleInputChange}
                   />
                   <button
-                    className='btn waves-effect waves-light'
+                    className='btn waves-effect waves-light custom-button'
                     type='button'
                     onClick={gerarCodigoBarras}
                   >
@@ -152,7 +164,7 @@ const Add = () => {
                 <p><br /></p>
                 <p><br /></p>
               </div>
-              <button className='btn waves-effect waves-light' type='submit'>
+              <button className='btn waves-effect waves-light custom-button' type='submit'>
                 Enviar
               </button>
             </form>
@@ -164,4 +176,7 @@ const Add = () => {
 };
 
 export default Add;
+
+
+
 

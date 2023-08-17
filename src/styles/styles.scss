@@ -90,9 +90,20 @@ header {
   }
 }
 
+.btn.waves-effect.waves-light {
+  background-color: #26a69a;
+  color: #fff;
+  width: auto;
+}
 .btn {
   background-color: #26a69a;
   color: #fff;
+  width: 70%;
+}
+.btn.delete {
+  background-color: #00345B;
+  color: #fff;
+  width: 70%;
 }
 
 .card {

@@ -5,10 +5,11 @@ const Footer = () => {
     const location = useLocation();
     const isLoginPage = location.pathname === '/login';
     const isCadastroPage = location.pathname === '/cadastro';
+    const isEstoquePage = location.pathname === '/estoque';
 
     return (
-        <footer className={(isLoginPage || isCadastroPage) ? "" : "page-footer"}>
-            {(isLoginPage || isCadastroPage) ? null : (
+        <footer className={(isLoginPage || isCadastroPage || isEstoquePage) ? "" : "page-footer"}>
+            {(isLoginPage || isCadastroPage || isEstoquePage) ? null : (
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m6">
@@ -27,7 +28,7 @@ const Footer = () => {
                     </div>
                 </div>
             )}
-            {(isLoginPage || isCadastroPage) ? null : (
+            {(isLoginPage || isCadastroPage || isEstoquePage) ? null : (
                 <div className="footer-bottom">
                     <div className="container">
                         <div className="row">
@@ -43,6 +44,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
 
 
 

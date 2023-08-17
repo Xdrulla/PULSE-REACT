@@ -12,13 +12,16 @@ const productController = {
 
     createProduct: async (req, res) => {
         const { nome_produto, codigo_barras, tipo_produto, estoque_total, estoque_disponivel, valor_varejo, valor_atacado } = req.body;
+    
         try {
             const newProduct = await Product.create({ nome_produto, codigo_barras, tipo_produto, estoque_total, estoque_disponivel, valor_varejo, valor_atacado });
             res.json(newProduct);
         } catch (error) {
-            res.status(500).json({ error: 'Failed to create product'});
+            console.error('Error creating product:', error);
+            res.status(500).json({ error: 'Failed to create product' });
         }
     },
+    
 
     updateProduct: async (req, res) => {
         const { id } = req.params;
